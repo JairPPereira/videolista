@@ -1,320 +1,341 @@
 <!doctype html>
-<html lang="pt-br">
+<html>
 <head>
   <meta charset="utf-8">
-  <title>Playlist de videos</title>
-  <link href="video-js.css" rel="stylesheet">
-  <link href="./videojs-playlist-ui.css" rel="stylesheet">
-
-
+  <title>Lista de videos</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="theme-color" content="#00FFFF"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="#00FFFF"/>
   <meta name="msapplication-navbutton-color" content="#00FFFF"/>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-  <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
-      <script src="https://unpkg.com/video.js/dist/video.js"></script>
-      <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
-
-      <link href="https://cdn.jsdelivr.net/npm/videojs-mobile-ui/dist/videojs-mobile-ui.css" rel="stylesheet" />
-      <script src = " https://cdn.jsdelivr.net/npm/videojs-mobile-ui/dist/videojs-mobile-ui.min.js" > </script>
-       <link rel="stylesheet" href="https://path/to/videojs-mobile-ui.css">
-
-      <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
-      <script src="https://unpkg.com/video.js/dist/video.js"></script>
-      <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
-    
- 
-  <style>
-
-    button {
-      margin: 2em;
-      width: 40em;
-    }
-
-    .options {
-      margin: 2em;
-    }
-
-    .autoadvance-group label {
-      margin: 40px;
-    }
-  </style>
+  <link href="video-js.css" rel="stylesheet">
+  <link href="videojs-playlist-ui.css" rel="stylesheet">
+  <link href="./plugin.scss" rel="stylesheet">
+  <link href="examples.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/videojs-mobile-ui/dist/videojs-mobile-ui.css" rel="stylesheet" />
+  <script src = " https://cdn.jsdelivr.net/npm/videojs-mobile-ui/dist/videojs-mobile-ui.min.js" > </script>
 </head>
 <body>
-  <video class="video-js vjs-big-play-centered vjs-default-skin" controls autoplay width="1280px"></video>
-  
-  <button class="previous">Anterior</button>
-  <button class="next">Próximo</button>
-  <div class="options">
-      <label><input type="radio" name="autoadvance" value="0"> 0</label>
-  
+  <div class="info" >
+    <h1>Lista de videos</h1>
+  </div> 
+
+  <div class="player-container" width="100%">
+    <video
+      id="video"
+      class="video-js"
+     
+      width="1280"
+      controls autoplay>
+      <source src="https://drive.google.com/uc?export=&id=1-FQN9D9Lx8jQZ4BVqGOfuJSklGUv9PHi" type="video/mp4">
+      
+    </video></div>
+    
+
+
+
+    <div class="vjs-playlist">
+      <!--
+        The contents of this element will be filled based on the
+        currently loaded playlist
+      -->
     </div>
   </div>
 
+
   <script src="video.js"></script>
   <script src="videojs-playlist.js"></script>
-  <script src="./videojs-playlist-ui.js"></script>
+  <script src="videojs-playlist-ui.js"></script>
+  <script src="./index.js"></script>
+  <link rel="stylesheet" href="https://path/to/videojs-mobile-ui.css">
+  <link rel="stylesheet" href="./style.css">
+
   <script>
-    var videoList = [{
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=1-FQN9D9Lx8jQZ4BVqGOfuJSklGUv9PHi',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-    }, {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=1047hOqoyQHbHK1pTRgKBvjtSvHZMbCEB',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+    var player = videojs('video');
+
+    player.playlist([{
+      name: 'Ah! como eu amei - Benito di Paula',
+     
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-FQN9D9Lx8jQZ4BVqGOfuJSklGUv9PHi', type: 'video/mp4' },
+       
+      ],
+
+      // you can use <picture> syntax to display responsive images
+      thumbnail: [
+        {
+          srcset: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
     },
+    {
+      name: 'Do geito que a vida quer - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1047hOqoyQHbHK1pTRgKBvjtSvHZMbCEB', type: 'video/mp4' },
+      ],
+
+      // you can use <picture> syntax to display responsive images
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'Retalhos de cetim - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'Trem das onze - Demônios da garoa',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-UtBmifRsplySSVCEfZnLcZtieHHUEgK', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'A minha história - José Augusto',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=12DrmH0nCG9zaNQ_MmwmVFNMD8zhd9LU_', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'Retalhos de cetim - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'Retalhos de cetim - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'Retalhos de cetim - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'Retalhos de cetim - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'Retalhos de cetim - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'Retalhos de cetim - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'Retalhos de cetim - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'Retalhos de cetim - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'Retalhos de cetim - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+
+
+    ]);
+
     
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=1-UtBmifRsplySSVCEfZnLcZtieHHUEgK',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
 
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=12DrmH0nCG9zaNQ_MmwmVFNMD8zhd9LU_',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
-
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=123pTPagXtN3Gub23lah08JYXVoSgathx',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
-
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=122X0WXzH6F5dI1-KEb0Bwu8piTXCWoNo',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
-
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=108VBMuTUArigZihwHkrXohl3O81zBYh8',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
-
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=1-9hGOzmuSE66wXFaXhrlTxnHDH47ahQH',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
-
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=10PVvxB1JyjNkA0CT76MM68DQIB-Blbu-',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
-
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=10FD1PuAGO_MMs8JqBnv5i5ySJDcTKv8a',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
-
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=10G6ks4pn9FUYh4O1ceDTSP2_x2mPMb7D', name: '2',
-        type: 'video/mp4'
-      },],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
-
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=108pD6_3z77ecg0ckpdLK2WiPzVXPu3a2',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
-
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=10GCp5do7Jziu8KBu6FhUL0cPykJQecmJ',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
-
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=10WjMZjFZhr8Ggr9fDAIxGskZUq7I4u_k',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
-
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=10YgM8mIMKCe2PlcmyQfTrnnpahMv5MFA',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
-
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=10Z6SOVjN7nc3lSNBFnBZXy5_z6pKrjbR',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
-
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=10Yob03B68ryeNI9sXF5DAIiwuzLCXALH',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
-
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=12CNvZLoFWgpxjnbLNAf6mbiyULCmnKpJ',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
-
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=128hzOVfefoj-7MjmowQNwulLZ4ZUS8b1',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
-
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=1CIYwHLciWD6tUWt6O19Pc9zdydWng86D',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
     
 
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=1-8ielGxidy6hUfwgedmd8dfPvz-3uUJ9',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
+ 
+    player.playlistUi({horizontal: true},);
+    player.playlist.autoadvance(0);
 
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=10GCp5do7Jziu8KBu6FhUL0cPykJQecmJ',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
-
-    {
-      sources: [{
-        src: 'https://drive.google.com/uc?export=&id=129rBX82ywkf-2XDNyvzhGy_tIivPti1P',
-        type: 'video/mp4'
-      }],
-      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
-     
-    },
-  
-  
-  
-  
-  
-  ];
-
-    var player = videojs(document.querySelector('video'), {
-      inactivityTimeout: 0
-    });
-
-    try {
-      // try on ios
-      player.volume(0);
-    } catch (e) {}
-
-    player.on([
-      'duringplaylistchange',
-      'playlistchange',
-      'beforeplaylistitem',
-      'playlistitem',
-      'playlistsorted'
-    ], function(e) {
-      videojs.log('player saw "' + e.type + '"');
-    });
-
-    player.playlist(videoList);
-
-    document.querySelector('.previous').addEventListener('click', function() {
-      player.playlist.previous();
-    });
-
-    document.querySelector('.next').addEventListener('click', function() {
-      player.playlist.next();
-    });
-
-    Array.prototype.forEach.call(document.querySelectorAll('[name=autoadvance]'), function(el) {
-      el.addEventListener('click', function() {
-        var value = document.querySelector('[name=autoadvance]:checked').value;
-        player.playlist.autoadvance(Number(value));
-      });
-    });
-
-    document.querySelector('[name="autoadvance"][value="0"]').click();
-
-    var repeatCheckbox = document.querySelector('.repeat');
-
-    repeatCheckbox.addEventListener('click', function() {
-      player.playlist.repeat(this.checked);
-    });
-
-    repeatCheckbox.checked = false;
+   
   </script>
-
-<script type="text/javascript" src="plugins/js/zoomrotate.js"></script>
-<script src="https://path/to/videojs-mobile-ui.min.js"></script>
+  <script type="text/javascript" src="plugins/js/zoomrotate.js"></script>
+  <script src="https://path/to/videojs-mobile-ui.min.js"></script>
 </body>
 </html>
