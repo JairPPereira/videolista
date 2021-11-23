@@ -2,9 +2,10 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Video.js Playlist UI - Horizontal Implementation</title>
+  <title>Lista de videos</title>
   <link href="video-js.css" rel="stylesheet">
   <link href="videojs-playlist-ui.css" rel="stylesheet">
+  <link href="./plugin.scss" rel="stylesheet">
   <link href="examples.css" rel="stylesheet">
 </head>
 <body>
@@ -12,16 +13,17 @@
     <h1>Lista de videos</h1>
   </div> 
 
-  <div class="player-container">
+  <div class="player-container" width="100%">
     <video
       id="video"
       class="video-js"
      
       width="1280"
       controls autoplay>
-      <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-      <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">
-    </video>
+      <source src="https://drive.google.com/uc?export=&id=1-FQN9D9Lx8jQZ4BVqGOfuJSklGUv9PHi" type="video/mp4">
+      
+    </video></div>
+    
 
 
 
@@ -32,29 +34,44 @@
       -->
     </div>
   </div>
+  <link href="https://cdn.jsdelivr.net/npm/videojs-mobile-ui/dist/videojs-mobile-ui.css" rel="stylesheet" />
+  <script src = " https://cdn.jsdelivr.net/npm/videojs-mobile-ui/dist/videojs-mobile-ui.min.js" > </script>
 
   <script src="video.js"></script>
   <script src="videojs-playlist.js"></script>
   <script src="videojs-playlist-ui.js"></script>
+  <script src="./index.js"></script>
+  <link rel="stylesheet" href="https://path/to/videojs-mobile-ui.css">
+  <link rel="stylesheet" href="./style.css">
+
   <script>
     var player = videojs('video');
 
     player.playlist([{
-      name: 'Disney\'s Oceans 1',
-      description: 'Explore the depths of our planet\'s oceans. ' +
-        'Experience the stories that connect their world to ours. ' +
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, ' +
-        'sed do eiusmod tempor incididunt ut labore et dolore magna ' +
-        'aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ' +
-        'laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure ' +
-        'dolor in reprehenderit in voluptate velit esse cillum dolore eu ' +
-        'fugiat nulla pariatur. Excepteur sint occaecat cupidatat non ' +
-        'proident, sunt in culpa qui officia deserunt mollit anim id est ' +
-        'laborum.',
-      duration: 45,
+      name: 'Ah! como eu amei - Benito di Paula',
+     
       sources: [
-        { src: 'http://vjs.zencdn.net/v/oceans.mp4', type: 'video/mp4' },
-        { src: 'http://vjs.zencdn.net/v/oceans.webm', type: 'video/webm' },
+        { src: 'https://drive.google.com/uc?export=&id=1-FQN9D9Lx8jQZ4BVqGOfuJSklGUv9PHi', type: 'video/mp4' },
+       
+      ],
+
+      // you can use <picture> syntax to display responsive images
+      thumbnail: [
+        {
+          srcset: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+    {
+      name: 'Do geito que a vida quer - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1047hOqoyQHbHK1pTRgKBvjtSvHZMbCEB', type: 'video/mp4' },
       ],
 
       // you can use <picture> syntax to display responsive images
@@ -69,25 +86,14 @@
         }
       ]
     },
+
     {
-      name: 'Disney\'s Oceans 2',
-      description: 'Explore the depths of our planet\'s oceans. ' +
-        'Experience the stories that connect their world to ours. ' +
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, ' +
-        'sed do eiusmod tempor incididunt ut labore et dolore magna ' +
-        'aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ' +
-        'laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure ' +
-        'dolor in reprehenderit in voluptate velit esse cillum dolore eu ' +
-        'fugiat nulla pariatur. Excepteur sint occaecat cupidatat non ' +
-        'proident, sunt in culpa qui officia deserunt mollit anim id est ' +
-        'laborum.',
-      duration: 45,
+      name: 'Retalhos de cetim - Benito di Paula',
+ 
       sources: [
-        { src: 'http://vjs.zencdn.net/v/oceans.mp4?2', type: 'video/mp4' },
-        { src: 'http://vjs.zencdn.net/v/oceans.webm?2', type: 'video/webm' },
+        { src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7', type: 'video/mp4' },
       ],
 
-      // you can use <picture> syntax to display responsive images
       thumbnail: [
         {
           srcset: 'test/example/oceans.jpg',
@@ -99,25 +105,14 @@
         }
       ]
     },
+
     {
-      name: 'Disney\'s Oceans 3',
-      description: 'Explore the depths of our planet\'s oceans. ' +
-        'Experience the stories that connect their world to ours. ' +
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, ' +
-        'sed do eiusmod tempor incididunt ut labore et dolore magna ' +
-        'aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ' +
-        'laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure ' +
-        'dolor in reprehenderit in voluptate velit esse cillum dolore eu ' +
-        'fugiat nulla pariatur. Excepteur sint occaecat cupidatat non ' +
-        'proident, sunt in culpa qui officia deserunt mollit anim id est ' +
-        'laborum.',
-      duration: 45,
+      name: 'Trem das onze - Demônios da garoa',
+ 
       sources: [
-        { src: 'http://vjs.zencdn.net/v/oceans.mp4?3', type: 'video/mp4' },
-        { src: 'http://vjs.zencdn.net/v/oceans.webm?3', type: 'video/webm' },
+        { src: 'https://drive.google.com/uc?export=&id=1-UtBmifRsplySSVCEfZnLcZtieHHUEgK', type: 'video/mp4' },
       ],
 
-      // you can use <picture> syntax to display responsive images
       thumbnail: [
         {
           srcset: 'test/example/oceans.jpg',
@@ -128,26 +123,201 @@
           src: 'test/example/oceans-low.jpg'
         }
       ]
-    }, {
-      name: 'Sintel (No Thumbnail)',
-      description: 'The film follows a girl named Sintel who is searching for a baby dragon she calls Scales.',
-      sources: [
-        { src: 'http://media.w3.org/2010/05/sintel/trailer.mp4', type: 'video/mp4' },
-        { src: 'http://media.w3.org/2010/05/sintel/trailer.webm', type: 'video/webm' },
-        { src: 'http://media.w3.org/2010/05/sintel/trailer.ogv', type: 'video/ogg' }
-      ],
-      thumbnail: false
     },
 
-    // This is a really underspecified video to demonstrate the
-    // behavior when optional parameters are missing. You'll get better
-    // results with more video metadata!
     {
-      name: 'Invalid Source',
-      sources: [{
-        src: 'Invalid'
-      }]
-    }]);
+      name: 'A minha história - José Augusto',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=12DrmH0nCG9zaNQ_MmwmVFNMD8zhd9LU_', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'Retalhos de cetim - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'Retalhos de cetim - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'Retalhos de cetim - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'Retalhos de cetim - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'Retalhos de cetim - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'Retalhos de cetim - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'Retalhos de cetim - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'Retalhos de cetim - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+    {
+      name: 'Retalhos de cetim - Benito di Paula',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'test/example/oceans.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'test/example/oceans-low.jpg'
+        }
+      ]
+    },
+
+
+
+    ]);
 
     
 

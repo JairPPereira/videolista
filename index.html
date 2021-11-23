@@ -2,8 +2,10 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>videojs-playlist Demo</title>
+  <title>Playlist de videos</title>
   <link href="video-js.css" rel="stylesheet">
+  <link href="./videojs-playlist-ui.css" rel="stylesheet">
+
   <style>
 
     button {
@@ -21,48 +23,231 @@
   </style>
 </head>
 <body>
-  <video class="video-js vjs-default-skin" controls width="1280px" height="720px"></video>
+  <video class="video-js vjs-default-skin" controls autoplay width="1280px"></video>
+  
   <button class="previous">Previous</button>
   <button class="next">Next</button>
   <div class="options">
-    <div class="autoadvance-group">
-      <h4>Auto-advance (in seconds)</h4>
-      <label><input type="radio" name="autoadvance" value="null" checked> No auto-advance</label>
       <label><input type="radio" name="autoadvance" value="0"> 0</label>
       <label><input type="radio" name="autoadvance" value="5"> 5</label>
       <label><input type="radio" name="autoadvance" value="10"> 10</label>
       <label><input type="radio" name="autoadvance" value="30"> 30</label>
     </div>
-    <div class="repeat-group">
-      <h4>Repeat</h4>
-      <label><input class="repeat" type="checkbox" name="repeat" > Enable Repeat</label>
-    </div>
   </div>
-  <ul>
-    <li><a href="/test/debug.html">Run unit tests in browser.</a></li>
-  </ul>
+
   <script src="video.js"></script>
   <script src="videojs-playlist.js"></script>
+  <script src="./videojs-playlist-ui.js"></script>
   <script>
     var videoList = [{
       sources: [{
         src: 'https://drive.google.com/uc?export=&id=1-FQN9D9Lx8jQZ4BVqGOfuJSklGUv9PHi',
         type: 'video/mp4'
       }],
-      poster: 'http://media.w3.org/2010/05/sintel/poster.png'
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
     }, {
       sources: [{
         src: 'https://drive.google.com/uc?export=&id=1047hOqoyQHbHK1pTRgKBvjtSvHZMbCEB',
         type: 'video/mp4'
       }],
-      poster: 'http://www.videojs.com/img/poster.jpg'
-    },{
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+    },
+    
+    {
       sources: [{
-        src: 'https://drive.google.com/uc?export=&id=1-bE8H4ibeDaE4Fq1jh6MyFvNMjSWaiT7',
+        src: 'https://drive.google.com/uc?export=&id=1-UtBmifRsplySSVCEfZnLcZtieHHUEgK',
         type: 'video/mp4'
       }],
-      poster: 'http://media.w3.org/2010/05/video/poster.png'
-    }];
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+
+    {
+      sources: [{
+        src: 'https://drive.google.com/uc?export=&id=12DrmH0nCG9zaNQ_MmwmVFNMD8zhd9LU_',
+        type: 'video/mp4'
+      }],
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+
+    {
+      sources: [{
+        src: 'https://drive.google.com/uc?export=&id=123pTPagXtN3Gub23lah08JYXVoSgathx',
+        type: 'video/mp4'
+      }],
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+
+    {
+      sources: [{
+        src: 'https://drive.google.com/uc?export=&id=122X0WXzH6F5dI1-KEb0Bwu8piTXCWoNo',
+        type: 'video/mp4'
+      }],
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+
+    {
+      sources: [{
+        src: 'https://drive.google.com/uc?export=&id=108VBMuTUArigZihwHkrXohl3O81zBYh8',
+        type: 'video/mp4'
+      }],
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+
+    {
+      sources: [{
+        src: 'https://drive.google.com/uc?export=&id=1-9hGOzmuSE66wXFaXhrlTxnHDH47ahQH',
+        type: 'video/mp4'
+      }],
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+
+    {
+      sources: [{
+        src: 'https://drive.google.com/uc?export=&id=10PVvxB1JyjNkA0CT76MM68DQIB-Blbu-',
+        type: 'video/mp4'
+      }],
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+
+    {
+      sources: [{
+        src: 'https://drive.google.com/uc?export=&id=10FD1PuAGO_MMs8JqBnv5i5ySJDcTKv8a',
+        type: 'video/mp4'
+      }],
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+
+    {
+      sources: [{
+        src: 'https://drive.google.com/uc?export=&id=10G6ks4pn9FUYh4O1ceDTSP2_x2mPMb7D',
+        type: 'video/mp4'
+      }],
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+
+    {
+      sources: [{
+        src: 'https://drive.google.com/uc?export=&id=108pD6_3z77ecg0ckpdLK2WiPzVXPu3a2',
+        type: 'video/mp4'
+      }],
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+
+    {
+      sources: [{
+        src: 'https://drive.google.com/uc?export=&id=10GCp5do7Jziu8KBu6FhUL0cPykJQecmJ',
+        type: 'video/mp4'
+      }],
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+
+    {
+      sources: [{
+        src: 'https://drive.google.com/uc?export=&id=10WjMZjFZhr8Ggr9fDAIxGskZUq7I4u_k',
+        type: 'video/mp4'
+      }],
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+
+    {
+      sources: [{
+        src: 'https://drive.google.com/uc?export=&id=10YgM8mIMKCe2PlcmyQfTrnnpahMv5MFA',
+        type: 'video/mp4'
+      }],
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+
+    {
+      sources: [{
+        src: 'https://drive.google.com/uc?export=&id=10Z6SOVjN7nc3lSNBFnBZXy5_z6pKrjbR',
+        type: 'video/mp4'
+      }],
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+
+    {
+      sources: [{
+        src: 'https://drive.google.com/uc?export=&id=10Yob03B68ryeNI9sXF5DAIiwuzLCXALH',
+        type: 'video/mp4'
+      }],
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+
+    {
+      sources: [{
+        src: 'https://drive.google.com/uc?export=&id=12CNvZLoFWgpxjnbLNAf6mbiyULCmnKpJ',
+        type: 'video/mp4'
+      }],
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+
+    {
+      sources: [{
+        src: 'https://drive.google.com/uc?export=&id=128hzOVfefoj-7MjmowQNwulLZ4ZUS8b1',
+        type: 'video/mp4'
+      }],
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+
+    {
+      sources: [{
+        src: 'https://drive.google.com/uc?export=&id=1CIYwHLciWD6tUWt6O19Pc9zdydWng86D',
+        type: 'video/mp4'
+      }],
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+    
+
+    {
+      sources: [{
+        src: 'https://drive.google.com/uc?export=&id=1-8ielGxidy6hUfwgedmd8dfPvz-3uUJ9',
+        type: 'video/mp4'
+      }],
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+
+    {
+      sources: [{
+        src: 'https://drive.google.com/uc?export=&id=10GCp5do7Jziu8KBu6FhUL0cPykJQecmJ',
+        type: 'video/mp4'
+      }],
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+
+    {
+      sources: [{
+        src: 'https://drive.google.com/uc?export=&id=129rBX82ywkf-2XDNyvzhGy_tIivPti1P',
+        type: 'video/mp4'
+      }],
+      poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEgBMyL2KBprzkjtIpYdGIQSNDcmqGLCAIZef6ntejDrW3kEfCtjer4G7fboBsnLIPaAOj-SBFlxfckPcpQkaPT8htUbLrnHgx-DRyG-u7nUQT2Ooj2yYVjinDB--ghzDJ3qKkpJbnQZUKMoWmokc5lh43r6L9ScRacWgBRoE_pwc9Ku8ssU-CAhq4rE=s200'
+     
+    },
+  
+  
+  
+  
+  
+  ];
 
     var player = videojs(document.querySelector('video'), {
       inactivityTimeout: 0
@@ -100,7 +285,7 @@
       });
     });
 
-    document.querySelector('[name="autoadvance"][value="null"]').click();
+    document.querySelector('[name="autoadvance"][value="0"]').click();
 
     var repeatCheckbox = document.querySelector('.repeat');
 
