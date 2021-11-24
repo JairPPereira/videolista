@@ -36,16 +36,45 @@
       <source src="https://drive.google.com/uc?export=&id=1-FQN9D9Lx8jQZ4BVqGOfuJSklGUv9PHi" type="video/mp4">
       
     </video></div>
+
+    <div class='square-box'>
+      <div class='square-content'>
+          <h3>Lista de musicas</h3>
+          <div class="vjs-playlist" width="1280">
+            <!--
+              The contents of this element will be filled based on the
+              currently loaded playlist
+            -->
+          </div>
+
+
+
+      </div>
+  </div>
+  <style>
+    .square-box{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #4679BD;
+}
+.square-box:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+.square-content{
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: white;
+    text-align: center;
+}
+    </style>
     
 
-
-
-    <div class="vjs-playlist" width="1280">
-      <!--
-        The contents of this element will be filled based on the
-        currently loaded playlist
-      -->
-    </div>
   </div>
   
 
