@@ -13,14 +13,13 @@
   <link href="./videojs-icons.css" rel="stylesheet">
   <link href="./plugin.scss" rel="stylesheet">
   <link href="examples.css" rel="stylesheet">
+  <link rel="stylesheet" href="./videojs-mobile-ui.css"> 
   <link href="https://cdn.jsdelivr.net/npm/videojs-mobile-ui/dist/videojs-mobile-ui.css" rel="stylesheet" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
-  
-  <script src = " https://cdn.jsdelivr.net/npm/videojs-mobile-ui/dist/videojs-mobile-ui.min.js" > </script>
-</head>
+ 
 <body>
   <center>
         <h1>JP videos </h1></center>
@@ -546,6 +545,9 @@
     player.playlistUi({horizontal: true},);
     player.playlist.autoadvance(0);
 
+  player.mobileUi();
+
+
    
   </script>
   <script>
@@ -555,7 +557,8 @@
  </script>
   <script type="text/javascript" src="plugins/js/zoomrotate.js"></script>
   
-  <script src="https://path/to/videojs-mobile-ui.min.js"></script>
+  <script src="./videojs-mobile-ui.js"></script>
+  <script src="./video.min.js"></script>
   
 </body>
 </html>
