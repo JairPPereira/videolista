@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="./videojs-mobile-ui.css"> 
   <link href="https://cdn.jsdelivr.net/npm/videojs-mobile-ui/dist/videojs-mobile-ui.css" rel="stylesheet" />
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
@@ -65,7 +67,7 @@
   <script src="videojs-playlist.js"></script>
   <script src="videojs-playlist-ui.js"></script>
   <script src="./index.js"></script>
-  <link rel="stylesheet" href="https://path/to/videojs-mobile-ui.css">
+  <link rel="stylesheet" href="videojs-mobile-ui.css">
   <link rel="stylesheet" href="./style.css">
 
   <script>
@@ -399,6 +401,25 @@
       ]
     },
 
+    {
+      name: 'Brincar de ser feliz - Raça negra',
+ 
+      sources: [
+        { src: 'https://drive.google.com/uc?export=&id=17a2zdieVNk_zSND2PtkLqnPgPseidukF', type: 'video/mp4' },
+      ],
+
+      thumbnail: [
+        {
+          srcset: 'https://1.bp.blogspot.com/-w89TJ8FlGu4/YU5y9weSzyI/AAAAAAAABJI/Ttmcd1DusMkdY-YyS8IwsYgVgABxHaPiQCLcBGAsYHQ/s200/racanegra200.jpg',
+          type: 'image/jpeg',
+          media: '(min-width: 400px;)'
+        },
+        {
+          src: 'https://1.bp.blogspot.com/-w89TJ8FlGu4/YU5y9weSzyI/AAAAAAAABJI/Ttmcd1DusMkdY-YyS8IwsYgVgABxHaPiQCLcBGAsYHQ/s200/racanegra200.jpg'
+        }
+      ]
+    },
+
     
 
 
@@ -692,11 +713,24 @@
 
    player.mobileUi();
  </script>
-  <script type="text/javascript" src="plugins/js/zoomrotate.js"></script>
+
+<script>
+  // initialize video.js
+  var my_video_id = videojs('video');
+  
+  // Set value to the plugin
+  my_video_id.zoomrotate({
+    rotate: 90,
+    zoom: 1
+    });
+  </script>
+ 
   
   <script type="text/javascript" src="./videojs-mobile-ui.js"></script>
   <script type="text/javascript" src="./video.min.js"></script>
   <script type="text/javascript" src="./videojs-playlist.min.js"></script>
+
+  <script type="text/javascript" src="./videojs.zoomrotate.js"></script>
   
 </body>
 </html>
