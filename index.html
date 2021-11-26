@@ -830,6 +830,17 @@
    var player = videojs('video');
 
    player.mobileUi();
+   player.on('touchstart', function (e) {
+        if (e.target.nodeName === 'video') {
+            if (player.paused()) {
+                this.play();
+            } else {
+                this.pause();
+            }
+        }
+    });
+
+
  </script>
 
 <script>
