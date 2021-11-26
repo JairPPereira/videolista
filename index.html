@@ -804,7 +804,8 @@
         {
           src: 'https://1.bp.blogspot.com/-0uKfHzS4A9c/YTzZb9cssjI/AAAAAAAABDw/d9vt-Y4wGTgOwwwhmu_qer1qaI1W8XmcwCLcBGAsYHQ/s200/radioclube.jpeg'
         }
-      ]
+      ],
+      poster:'https://1.bp.blogspot.com/-0uKfHzS4A9c/YTzZb9cssjI/AAAAAAAABDw/d9vt-Y4wGTgOwwwhmu_qer1qaI1W8XmcwCLcBGAsYHQ/s200/radioclube.jpeg'
     },
 
 
@@ -830,17 +831,8 @@
    var player = videojs('video');
 
    player.mobileUi();
-   player.on('touchstart', function (e) {
-        if (e.target.nodeName === 'video') {
-            if (player.paused()) {
-                this.play();
-            } else {
-                this.pause();
-            }
-        }
-    });
 
-
+   
  </script>
 
 <script>
