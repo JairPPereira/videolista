@@ -1024,6 +1024,14 @@
   </script>
   <script>
    var player = videojs('video');
+   $('#play-pause-button').click(function () {
+   var mediaVideo = $("#media-video").get(0);
+   if (mediaVideo.paused) {
+       mediaVideo.play();
+   } else {
+       mediaVideo.pause();
+  }
+});
 
    player.mobileUi();
 
