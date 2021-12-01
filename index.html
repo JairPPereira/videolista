@@ -58,32 +58,7 @@
       <source src="https://drive.google.com/uc?export=&id=17BtCo13W_hODgaoNTEXrKwtDlKc8HRYQ" type="video/mp4">
       
     </video>
-    <ul>
-      <li><a href="test/">Run unit tests in browser.</a></li>
-      <li><a href="docs/api/">Read generated docs.</a></li>
-    </ul>
-    <h2>Options</h2>
-    <ul id="options">
-      <li>fullscreen:</li>
-      <ul>
-        <li><input type="checkbox"  data-section="fullscreen" id="enterOnRotate">enterOnRotate</li>
-        <li><input type="checkbox" data-section="fullscreen" id="exitOnRotate">exitOnRotate</li>
-        <li><input type="checkbox" data-section="fullscreen" id="lockOnRotate">lockOnRotate</li>
-        <li><input type="checkbox" data-section="fullscreen" id="iOS">iOS <b>Deprecated</b></li>
-        <li><input type="checkbox" data-section="fullscreen" id="fullscreenDisabled">disabled</li>
-      </ul>
-      <li>touchControls:</li>
-      <ul>
-        <li><input type="number" data-section="touchControls" id="seekSeconds">seekSeconds</li>
-        <li><input type="number" data-section="touchControls" id="tapTimeout">tapTimeout</li>
-        <li><input type="checkbox" data-section="touchControls" id="disableOnEnd">disableOnEnd</li>
-        <li><input type="checkbox" data-section="touchControls" id="touchControlsDisabled">disabled</li>
-      </ul>
-    </ul>
-    <button id="reload">Reload with options</button>
-    <ul id="log"></ul>
-  
-  </div>
+
     <center>
       <h1>JP videos </h1></center>
           <div class="vjs-playlist" width="100%" position= "responsive" >
@@ -1276,7 +1251,7 @@
 
 <script>
   (function(window, videojs) {
-    var options = {
+    var video= {
       fullscreen: {
         enterOnRotate: true,
         exitOnRotate: true,
