@@ -1025,11 +1025,11 @@
   <script>
    var player = videojs('video');
    $('#play-pause-button').click(function () {
-   var mediaVideo = $("#media-video").get(0);
-   if (mediaVideo.paused) {
-       mediaVideo.play();
+   var Video = $("#video").get(0);
+   if (Video.paused) {
+       Video.play();
    } else {
-       mediaVideo.pause();
+       Video.pause();
   }
 });
 
