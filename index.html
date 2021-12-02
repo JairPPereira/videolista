@@ -85,7 +85,29 @@
   <link rel="stylesheet" href="./style.css">
 
   <script>
-    var player = videojs('video');
+    var player = videojs('video', {
+      autoplay: 'muted',
+      onclick:'playpause',
+      
+      fullscreen: {
+        enterOnRotate: true,
+        exitOnRotate: true,
+        lockOnRotate: true,
+        iOS: false,
+        disabled: false
+      },
+      touchControls: {
+        seekSeconds: 10,
+        tapTimeout: 300,
+        disableOnEnd: false,
+        disabled: false
+      }
+      
+    },
+    
+    );
+
+   
 
     player.playlist([{
       name: 'Eu menti - Alexandre Pires',
@@ -1357,6 +1379,7 @@
 
     ]);
 
+   
     
 
   
