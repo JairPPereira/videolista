@@ -49,7 +49,8 @@
     <video
       id="video"
       class="video-js vjs-big-play-centered vjs-show-big-play-button-on-pause   vjs-fluid" controls playsinline
-     width="1024" 
+      height="100%"
+     
 
      poster= "https://blogger.googleusercontent.com/img/a/AVvXsEguZAbKY-4Gm9E3fFa_ww67CSv9YYD_SVnSWgYz-Mo-swUxSarjIElXD9m-pNmqyEJEPUbLWt4dFQOqKCo5uW4GKrzXxEIlVV0Zs_NINvTqQLzN8_-trbYIw9WtTEnHxFkXVs2ajrV65AGg95C2hFstacRqdM7ghAI0EA9ME93nGLy1DgId7J62fKWU=s240"
     
@@ -61,7 +62,7 @@
 
     <center>
       <h1>JP videos </h1></center>
-          <div class="vjs-playlist" width="100%" position= "responsive" >
+          <div class="vjs-playlist"  position= "responsive" >
             <!--
               The contents of this element will be filled based on the
               currently loaded playlist
@@ -92,7 +93,10 @@
       controls: true,
       aspectRatio: '4:3',
       
+      
+      
     },
+    
     
     );
 
@@ -1389,14 +1393,13 @@
 
 
    player.mobileUi(
-   );
-   onclick.player.pause(true);
+   )
 
    
  </script>
 
 <script>
-  (function(window, videojs) {
+  $(function(window, videojs) {
     var video= {
       fullscreen: {
         enterOnRotate: true,
