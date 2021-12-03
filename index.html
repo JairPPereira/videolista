@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <title>Lista de videos</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#8cc3f0"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="#8cc3f0"/>
   <meta name="msapplication-navbutton-color" content="#8cc3f0"/>
@@ -39,6 +41,7 @@
       pointer-events: none;
       display: none;
     }
+    
     </style>
  
 <body>
@@ -60,6 +63,11 @@
       
     </video>
 
+    <div>
+   
+      <button id="goFS" style="width: 250px">Tela cheia</button>
+    </div>
+
     <center>
       <h1>JP videos </h1></center>
           <div class="vjs-playlist"  position= "responsive" >
@@ -76,6 +84,14 @@
     
 
   </div>
+
+  <script>
+    var goFS = document.getElementById("goFS");
+    goFS.addEventListener("click", function() {
+        var videoElement = document.getElementById("video");
+        videoElement.requestFullscreen();
+    }, false);
+  </script>
 
 
   <script src="video.js"></script>
