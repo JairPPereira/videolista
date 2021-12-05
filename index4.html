@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lista de videos</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -10,70 +10,118 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="#8cc3f0"/>
   <meta name="msapplication-navbutton-color" content="#8cc3f0"/>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <title>videojs-mobile-ui Demo</title>
-  <link href="./video-js.css" rel="stylesheet">
-  <link href="./videojs-mobile-ui.css" rel="stylesheet">
+  
+  <script src="jquery.js"></script>
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <link href="video-js.css" rel="stylesheet">
   <link href="videojs-playlist-ui.css" rel="stylesheet">
-  <style>
-  .testEl {
-    width: 10%;
-    height: 10%;
-    position: absolute;
-    top: 0;
-    pointer-events: none;
-    display: none;
-  }
+  <link href="./videojs-icons.css" rel="stylesheet">
+  <link href="./plugin.scss" rel="stylesheet">
+  <link href="examples.css" rel="stylesheet">
+  <link rel="stylesheet" href="./videojs-mobile-ui.css"> 
+  <link href="https://cdn.jsdelivr.net/npm/videojs-mobile-ui/dist/videojs-mobile-ui.css" rel="stylesheet" />
+  <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+  <script src="https://unpkg.com/video.js/dist/video.js"></script>
+  <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+
+<style>
+  
+  body {background-color:#8cc3f0;width: auto; height: auto;}
   </style>
-</head>
-
-
+  <style>
+    .testEl {
+      width: 10%;
+      height: 10%;
+      position: absolute;
+      top: 0;
+      pointer-events: none;
+      display: none;
+    }
+    
+    </style>
+ 
 <body>
-    <div class="player-container" width="100%">
-
-  <video-js id="videojs-mobile-ui-player" class="video-js vjs-default-skin vjs-fluid" controls playsinline
-  poster= "https://blogger.googleusercontent.com/img/a/AVvXsEguZAbKY-4Gm9E3fFa_ww67CSv9YYD_SVnSWgYz-Mo-swUxSarjIElXD9m-pNmqyEJEPUbLWt4dFQOqKCo5uW4GKrzXxEIlVV0Zs_NINvTqQLzN8_-trbYIw9WtTEnHxFkXVs2ajrV65AGg95C2hFstacRqdM7ghAI0EA9ME93nGLy1DgId7J62fKWU=s240"
-  >
-    <source src="https://drive.google.com/uc?export=&id=17BtCo13W_hODgaoNTEXrKwtDlKc8HRYQ" type='video/mp4'>
-   
-  </video-js>
-
  
-  
-  <ul id="options">
-  
-    <ul>
-      <data-section="fullscreen" id="enterOnRotate">
-      <data-section="fullscreen" id="exitOnRotate"></data-section=>
-      <data-section="fullscreen" id="lockOnRotate"></data-section=>
-      <data-section="fullscreen" id="iOS"></data-section=>
-      <data-section="fullscreen" id="fullscreenDisabled"></data-section=>
-    </ul>
-   
-    <ul>
-      <data-section="touchControls" id="seekSeconds"></data-section=>
-      <data-section="touchControls" id="tapTimeout"></data-section=>
-      <data-section="touchControls" id="disableOnEnd"></data-section=>
-      <data-section="touchControls" id="touchControlsDisabled"></data-section=>
-    </ul>
-  </ul>
- <data-section="touchControls" id="reload"></data-section=>
+       
 
- <center>
-    <h1>JP videos </h1></center>
-        <div class="vjs-playlist"  position= "responsive" >
-          <!--
-            The contents of this element will be filled based on the
-            currently loaded playlist
-          -->
-        </div>
- 
-  <script src="./video.js"></script>
-  <script src="./videojs-mobile-ui.js"></script>
-  <script src="videojs-playlist.js"></script>
-  <script src="videojs-playlist-ui.js"></script>
+  <div class="player-container" width="100%">
+    <video
+      id="video"
+      class="video-js vjs-big-play-centered vjs-show-big-play-button-on-pause   vjs-fluid" controls playsinline
+      width="320" height="240"
+     
+
+     poster= "https://blogger.googleusercontent.com/img/a/AVvXsEguZAbKY-4Gm9E3fFa_ww67CSv9YYD_SVnSWgYz-Mo-swUxSarjIElXD9m-pNmqyEJEPUbLWt4dFQOqKCo5uW4GKrzXxEIlVV0Zs_NINvTqQLzN8_-trbYIw9WtTEnHxFkXVs2ajrV65AGg95C2hFstacRqdM7ghAI0EA9ME93nGLy1DgId7J62fKWU=s240"
+    
+     
+    >
+      <source src="https://drive.google.com/uc?export=&id=17BtCo13W_hODgaoNTEXrKwtDlKc8HRYQ" type="video/mp4">
+
+    <object data="" width="320" height="240">
+
+      <embed width="320" height="240" src="https://drive.google.com/uc?export=&id=17BtCo13W_hODgaoNTEXrKwtDlKc8HRYQ">
+    </object>
+    
+      
+    </video>
+
+    <div>
+   
+      <button id="goFS" style="width: 250px">Tela cheia</button>
+    </div>
+
+    <center>
+      <h1>JP videos </h1></center>
+          <div class="vjs-playlist"  position= "responsive" >
+            <!--
+              The contents of this element will be filled based on the
+              currently loaded playlist
+            -->
+          </div>
+
+    
+
+
+
+    
+
+  </div>
 
   <script>
-    var player = videojs('videojs-mobile-ui-player'
+    var goFS = document.getElementById("goFS");
+    goFS.addEventListener("click", function() {
+        var videoElement = document.getElementById("video");
+        videoElement.requestFullscreen();
+    }, false);
+  </script>
+
+
+  <script src="video.js"></script>
+  <script src="videojs-playlist.js"></script>
+  <script src="videojs-playlist-ui.js"></script>
+  <script src="./index.js"></script>
+  <link rel="stylesheet" href="videojs-mobile-ui.css">
+  <link rel="stylesheet" href="./style.css">
+
+  <script>
+    var player = videojs('video', {
+      autoplay: 'play',
+     
+      fluid: true,
+      controls: true,
+      aspectRatio: '4:3',
+      
+      
+      
+    },
+    
     
     );
 
@@ -1365,82 +1413,105 @@
 
    
   </script>
-
-
   <script>
-    (function(window, videojs) {
-      var options = {
-        fullscreen: {
-          enterOnRotate: true,
-          exitOnRotate: true,
-          lockOnRotate: true,
-          iOS: false,
-          disabled: false
-        },
-        touchControls: {
-          seekSeconds: 10,
-          tapTimeout: 300,
-          disableOnEnd: false,
-          disabled: false
-        }
-      };
 
-      var url = new URL(window.location);
-      if (url.searchParams.has('options')) {
-        options = JSON.parse(url.searchParams.get('options'));
+
+
+   player.mobileUi(
+   )
+
+   
+ </script>
+
+<script>
+  $(function(window, videojs) {
+    var video= {
+      fullscreen: {
+        enterOnRotate: true,
+        exitOnRotate: true,
+        lockOnRotate: true,
+        iOS: false,
+        disabled: false
+      },
+      touchControls: {
+        seekSeconds: 10,
+        tapTimeout: 300,
+        disableOnEnd: false,
+        disabled: false
       }
+    };
 
-      console.log(JSON.stringify(options, null, 2));
+    var url = new URL(window.location);
+    if (url.searchParams.has('options')) {
+      options = JSON.parse(url.searchParams.get('options'));
+    }
 
-      Object.keys(options).forEach(function(section) {
-        Object.keys(options[section]).forEach(function(prop) {
-          const val = options[section][prop];
+    console.log(JSON.stringify(options, null, 2));
 
-          if (prop === 'disabled') {
-            prop = `${section}Disabled`;
-          }
+    Object.keys(options).forEach(function(section) {
+      Object.keys(options[section]).forEach(function(prop) {
+        const val = options[section][prop];
 
-          if (typeof val === 'boolean') {
-            document.getElementById(prop).checked = val; 
-          }
-          if (typeof val === 'number') {
-            document.getElementById(prop).value = val; 
-          }
-        });
+        if (prop === 'disabled') {
+          prop = `${section}Disabled`;
+        }
+
+        if (typeof val === 'boolean') {
+          document.getElementById(prop).checked = val; 
+        }
+        if (typeof val === 'number') {
+          document.getElementById(prop).value = val; 
+        }
       });
+    });
 
-      document.getElementById('options').querySelectorAll('input').forEach(function(opt) {
-        opt.addEventListener('change', function() {
-          if (this.type === 'checkbox') {
-            const param = this.id.endsWith('Disabled') ? 'disabled' : this.id;
+    document.getElementById('options').querySelectorAll('input').forEach(function(opt) {
+      opt.addEventListener('change', function() {
+        if (this.type === 'checkbox') {
+          const param = this.id.endsWith('Disabled') ? 'disabled' : this.id;
 
-            options[this.getAttribute('data-section')][param] = this.checked;
-          } else {
-            options[this.getAttribute('data-section')][this.id] = parseFloat(this.value);
-          }
-          console.log(options);
-        });
+          options[this.getAttribute('data-section')][param] = this.checked;
+        } else {
+          options[this.getAttribute('data-section')][this.id] = parseFloat(this.value);
+        }
+        console.log(options);
       });
+    });
 
-      document.getElementById('reload').addEventListener('click', function() {
-        url.searchParams.set('options', JSON.stringify(options));
+    document.getElementById('reload').addEventListener('click', function() {
+      url.searchParams.set('options', JSON.stringify(options));
 
-        window.location = url.href;
-      })
+      window.location = url.href;
+    })
 
-      window.addEventListener('orientationchange', function() {
-        var el = document.createElement('li');
-        var message = (new Date).toTimeString().split(' ')[0] + ' ' + window.orientation;
-        message += (screen && screen.orientation ? ' ' + screen.orientation.type + ' ' + screen.orientation.angle : '');
-        el.textContent = message;
-        console.log(message);
-        document.getElementById('log').appendChild(el);
-      });
+    window.addEventListener('orientationchange', function() {
+      var el = document.createElement('li');
+      var message = (new Date).toTimeString().split(' ')[0] + ' ' + window.orientation;
+      message += (screen && screen.orientation ? ' ' + screen.orientation.type + ' ' + screen.orientation.angle : '');
+      el.textContent = message;
+      console.log(message);
+      document.getElementById('log').appendChild(el);
+    });
 
-      var testPlayer = window.testPlayer = videojs('videojs-mobile-ui-player');
-      testPlayer.endscreen = function() {};
-      testPlayer.mobileUi(options);
-    }(window, window.videojs));
-  </script>
+    var testPlayer = window.testPlayer = videojs('video');
+    testPlayer.endscreen = function() {};
+    testPlayer.mobileUi(options);
+  }(window, window.videojs));
+</script>
+
+
+
+ 
+  
+  <script type="text/javascript" src="./videojs-mobile-ui.js"></script>
+  <script type="text/javascript" src="./video.min.js"></script>
+  <script type="text/javascript" src="./videojs-playlist.min.js"></script>
+
+  <script type="text/javascript" src="./videojs.zoomrotate.js"></script>
+
+  <script type="text/javascript" src="./toFullScreen.js"></script>
+
+  
+  
 </body>
 </html>
